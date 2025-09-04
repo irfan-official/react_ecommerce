@@ -24,10 +24,12 @@ function Home() {
     try {
       const { data } = await axios.get(`/products/category/${categoryName}`);
       setFilteredProducts(data);
+      console.log(" alll product ===> ", data);
     } catch (error) {
       console.log(error);
     }
   };
+  
   useEffect(() => {
     if (categoryName !== "undefined") getProductCategory();
   }, [categoryName]);
